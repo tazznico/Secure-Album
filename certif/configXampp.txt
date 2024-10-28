@@ -1,0 +1,20 @@
+// placer le dossier certif dans xampp/apache/conf
+// A COPIER dans C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+
+
+<VirtualHost *:443>
+    ServerName localhost
+    DocumentRoot C:/Users/Aimen/Desktop/secg4-project-health/health/public      // path du projet 
+    
+    SSLEngine on
+    SSLCertificateFile C:/xampp/apache/conf/certif/server.crt                 // path de la certif ssl
+    SSLCertificateKeyFile C:/xampp/apache/conf/certif/server.key             	// path de la clé de la certif ssl
+
+    
+    <Directory C:/Users/Aimen/Desktop/secg4-project-health/health/public>     // path du projet
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
